@@ -9,8 +9,8 @@ export const getAll = async () => {
 
   return result;
 };
-export const getOne = (blogId) => {
-  return fetch(`${baseUrl}/${blogId}`).then((res) => res.json());
+export const getOne = (jobId) => {
+  return fetch(`${baseUrl}/${jobId}`).then((res) => res.json());
 };
 
 export const getLastThree = async () => {
@@ -19,14 +19,14 @@ export const getLastThree = async () => {
   return lastThree;
 };
 
-export const create = async (blogData, token) => {
+export const create = async (jobData, token) => {
   let response = await fetch(baseUrl, {
     method: "POST",
     headers: {
       "content-type": "application/json",
       "x-authorization": token,
     },
-    body: JSON.stringify({ ...blogData }),
+    body: JSON.stringify({ ...jobData }),
   });
 
   let result = await response.json();
@@ -34,8 +34,8 @@ export const create = async (blogData, token) => {
   return result;
 };
 
-export const destroy = (blogId, token) => {
-  return fetch(`${baseUrl}/${blogId}`, {
+export const destroy = (jobId, token) => {
+  return fetch(`${baseUrl}/${jobId}`, {
     method: "DELETE",
     headers: {
       "X-Authorization": token,
