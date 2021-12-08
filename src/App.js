@@ -8,6 +8,7 @@ import Jobs from "./components/Jobs/Jobs.js";
 import CreateJob from "./components/CreateJob/CreateJob.js";
 import Login from "./components/Login/Login.js";
 import Register from "./components/Register/Register.js";
+import JobDetails from "./components/JobDetails/JobDetails.js";
 import Footer from "./components/Footer/Footer.js";
 import Logout from "./components/Logout/Logout.js";
 
@@ -41,6 +42,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/jobs/create" element={<CreateJob />} />
+        <Route path="/jobs/:jobId" element={<JobDetails />} />
         <Route path="/logout" element={<Logout />} />
       </Routes>
 
