@@ -3,8 +3,8 @@ import "./FeaturedJobsItem.css";
 
 const FeaturedJobsItem = ({ job }) => {
   return (
-    <div class="col-lg-4">
-      <div class="card mb-4 box-shadow rounded-0">
+    <div className="col-lg-4">
+      <div className="card mb-4 box-shadow rounded-0">
         <img
           className="card-img-top w-100 d-block rounded-0 featured-job-image"
           src={job.image}
@@ -43,7 +43,7 @@ const FeaturedJobsItem = ({ job }) => {
             <br />
             <strong>{job.company}</strong>
           </p>
-          <Link to={`/jobs/:${job._id}`} className="job-details-button">
+          <Link to={`/jobs/${job._id}`} className="job-details-button">
             <button className="btn btn-primary " type="button">
               View Details
             </button>
