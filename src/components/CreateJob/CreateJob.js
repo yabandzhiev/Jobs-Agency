@@ -26,14 +26,14 @@ const CreateJob = () => {
     let image = formData.get("image");
 
     if (
-      headline.length == "" ||
-      location.length == "" ||
+      headline.length === "" ||
+      location.length === "" ||
       salary.length == "" ||
-      company.length == "" ||
-      date.length == "" ||
-      image.length == "" ||
-      contact.length == "" ||
-      description.length == ""
+      company.length === "" ||
+      date.length === "" ||
+      image.length === "" ||
+      contact.length === "" ||
+      description.length === ""
     ) {
       return alert("Fill in all the fields!");
     }
@@ -71,6 +71,9 @@ const CreateJob = () => {
           date,
           level,
           image,
+          contact,
+          description,
+          ownerId: user._id,
         },
         user.accessToken
       )
@@ -89,7 +92,13 @@ const CreateJob = () => {
             <label className="form-label" htmlFor="headline">
               Headline
             </label>
-            <input className="form-control" type="text" id="headline" name="headline" />
+            <input
+              className="form-control"
+              type="text"
+              id="headline"
+              name="headline"
+              placeholder="ex. React Developer"
+            />
           </div>
 
           <div className="mb-3">
@@ -113,6 +122,7 @@ const CreateJob = () => {
               type="location"
               id="location"
               name="location"
+              placeholder="ex. London"
             />
           </div>
           <div className="mb-3">
@@ -129,7 +139,7 @@ const CreateJob = () => {
           <div className="mb-3">
             <label className="form-label" htmlFor="subject">
               Category
-              <Form.Select aria-label="Default select example">
+              <Form.Select aria-label="Default select example" name="category">
                 <option disabled>Choose a category</option>
                 <option value="Health Science">Health Science</option>
                 <option value="Business and Finance">Business and Finance</option>
@@ -152,7 +162,7 @@ const CreateJob = () => {
           <div className="mb-3">
             <label className="form-label" htmlFor="subject">
               Level
-              <Form.Select aria-label="Default select example">
+              <Form.Select aria-label="Default select example" name="level">
                 <option disabled>Choose level</option>
                 <option value="Entry Level">Entry Level</option>
                 <option value="Intermediate Level">Intermediate Level</option>
@@ -164,13 +174,23 @@ const CreateJob = () => {
             <label className="form-label" htmlFor="contact">
               Contact
             </label>
-            <input className="form-control" id="contact" name="contact" />
+            <input
+              className="form-control"
+              id="contact"
+              name="contact"
+              placeholder="Company's email"
+            />
           </div>
           <div className="mb-3">
             <label className="form-label" htmlFor="image">
               Image
             </label>
-            <input className="form-control" id="image" name="image" />
+            <input
+              className="form-control"
+              id="image"
+              name="image"
+              placeholder="https://..."
+            />
           </div>
           <div className="mb-3">
             <label className="form-label" htmlFor="description">
