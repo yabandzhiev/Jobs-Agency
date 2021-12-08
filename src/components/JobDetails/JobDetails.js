@@ -147,7 +147,7 @@ const JobDetails = () => {
                       </Button>
                     </div>
                     <div className="col">
-                      <Link to={`jobs/${jobId}/edit`}>
+                      <Link to={`/jobs/${jobId}/edit`}>
                         <Button variant="secondary">Edit</Button>
                       </Link>
                     </div>
