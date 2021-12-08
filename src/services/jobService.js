@@ -33,6 +33,20 @@ export const create = async (jobData, token) => {
 
   return result;
 };
+export const edit = async (jobData, jobId, token) => {
+  let response = await fetch(`${baseUrl}/${jobId}`, {
+    method: "PUT",
+    headers: {
+      "content-type": "application/json",
+      "x-authorization": token,
+    },
+    body: JSON.stringify({ ...jobData }),
+  });
+
+  let result = await response.json();
+
+  return result;
+};
 
 export const destroy = (jobId, token) => {
   return fetch(`${baseUrl}/${jobId}`, {
