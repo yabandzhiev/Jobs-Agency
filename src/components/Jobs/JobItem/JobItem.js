@@ -6,7 +6,7 @@ const JobItem = ({ job }) => {
     <div className="col-12 col-md-6 col-lg-4">
       <div className="clean-product-item">
         <div className="image">
-          <Link to={`/jobs/:${job._id}`}>
+          <Link to={`/jobs/${job._id}`}>
             <img
               className="img-fluid d-block mx-auto job-catalog-images"
               src={job.image}
@@ -47,7 +47,7 @@ const JobItem = ({ job }) => {
             <br />
             <strong>{job.company}</strong>
           </p>
-          <Link to={`/jobs/:${job._id}`} className="job-details-button">
+          <Link to={`/jobs/${job._id}`} className="job-details-button">
             {" "}
             <button className="btn btn-primary " type="button">
               View Details
