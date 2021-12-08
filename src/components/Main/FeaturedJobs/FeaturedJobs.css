@@ -1,0 +1,15 @@
+/* .card-img-top.w-100.d-block {
+  align-self: center;
+  max-width: 500px !important;
+}
+*/
+.featured-jobs-group {
+  text-align: center;
+}
+.featured-job-image {
+  min-height: 300px;
+  max-height: 300px;
+}
+.card.mb-4.box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}

@@ -1,0 +1,6 @@
+#about-us-button-for-jobs > a {
+  text-decoration: none;
+}
+#about-us-button-for-jobs:hover > a {
+  color: white !important;
+}

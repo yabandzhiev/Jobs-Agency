@@ -1,24 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import useLocalStorage from "./hooks/useLocalStorage.js";
+import { AuthContext } from "./contexts/AuthContext.js";
+
+import Header from "./components/Header/Header.js";
+import Main from "./components/Main/Main.js";
+import Jobs from "./components/Jobs/Jobs.js";
+import CreateJob from "./components/CreateJob/CreateJob.js";
+import Login from "./components/Login/Login.js";
+import Register from "./components/Register/Register.js";
+import Footer from "./components/Footer/Footer.js";
+import Logout from "./components/Logout/Logout.js";
+
+import ScrollToTop from "./hoc/scrollToTop.js";
+
+const initialAuthState = {
+  _id: "",
+  email: "",
+  accessToken: "",
+};
 
 function App() {
+  const [user, setUser] = useLocalStorage("user", initialAuthState);
+
+  const login = (authData) => {
+    setUser(authData);
+  };
+
+  const logout = () => {
+    setUser(initialAuthState);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthContext.Provider value={{ user, login, logout }}>
+      <ScrollToTop />
+
+      <Header />
+
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/jobs" element={<Jobs />} />
+        <Route path="/jobs/create" element={<CreateJob />} />
+        <Route path="/logout" element={<Logout />} />
+      </Routes>
+
+      <Footer />
+    </AuthContext.Provider>
   );
 }
 

@@ -1,0 +1,44 @@
+{
+  "s23d2g3f45g-2d23f43fd22-d2f2d22d2": {
+    "_id": "s23d2g3f45g-2d23f43fd22-d2f2d22d2",
+    "image": "assets/img/companies/health-company.png",
+    "date": "15-06-2020",
+    "location": "London",
+    "type": "Contract",
+    "headline": "Doctor",
+    "salary": "60 000",
+    "category": "Health Science",
+    "company": "BMI Kings Park Hospital",
+    "description": "lorem ipsum dolor sit amet, consectetur",
+    "contact": "qwerty@abv.bg",
+    "level": "Senior Level"
+  },
+  "fjk2d23kj2nkd2-d23d23f2d32-f2d223f2d-22d2": {
+    "_id": "fjk2d23kj2nkd2-d23d23f2d32-f2d223f2d-22d2",
+    "image": "assets/img/companies/school-company.png",
+    "date": "15-06-2020",
+    "location": "London",
+    "type": "Fulltime",
+    "headline": "Teacher",
+    "salary": "50 000",
+    "category": "Business and Finance",
+    "company": "City of London School",
+    "description": "lorem ipsum dolor sit amet, consectetur",
+    "contact": "random@abv.bg",
+    "level": "Intermediate Level"
+  },
+  "wk2jd2n3kdj2dk-f2d23f23d-23f2d323f23d2-d2": {
+    "_id": "wk2jd2n3kdj2dk-f2d23f23d-23f2d323f23d2-d2",
+    "image": "assets/img/companies/software-company.png",
+    "date": "15-06-2020",
+    "location": "London",
+    "type": "Internship",
+    "headline": "React Developer",
+    "salary": "30 000",
+    "category": "Information Technology",
+    "company": "Pivotal Software",
+    "description": "lorem ipsum dolor sit amet, consectetur",
+    "contact": "asdasd@abv.bg",
+    "level": "Entry Level"
+  }
+}
