@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 
 import * as jobService from "../../services/jobService";
-import { useAuthContext } from "../../contexts/AuthContext";
+import { AuthContext } from "../../contexts/AuthContext.js";
 import useJobState from "../../hooks/useJobState";
 
 import Button from "react-bootstrap/Button";
@@ -11,8 +11,17 @@ import "./JobDetails.css";
 
 const JobDetails = () => {
   const navigate = useNavigate();
+  let { user } = useContext(AuthContext);
   const { jobId } = useParams();
   const [job, setJob] = useJobState(jobId);
+
+  const handleDestroy = (e) => {
+    e.preventDefault();
+
+    jobService.destroy(jobId, user.accessToken).then(() => {
+      navigate("/jobs");
+    });
+  };
 
   return (
     <div style={{ overflow: "hidden" }}>
@@ -133,7 +142,7 @@ const JobDetails = () => {
                   <hr />
                   <div className="row">
                     <div className="col">
-                      <Button variant="danger" onClick>
+                      <Button variant="danger" onClick={handleDestroy}>
                         Delete
                       </Button>
                     </div>
