@@ -24,8 +24,8 @@ const FeaturedJobs = () => {
         <p>Those are the last three jobs published right now!</p>
         <br />
       </div>
-      <div class="container featured-jobs-group">
-        <div class="row">
+      <div className="container featured-jobs-group">
+        <div className="row">
           {job.map((x) => {
             return <FeaturedJobsItem job={x} key={x._id} />;
           })}
