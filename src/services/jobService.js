@@ -13,6 +13,13 @@ export const getOne = (jobId) => {
   return fetch(`${baseUrl}/${jobId}`).then((res) => res.json());
 };
 
+export const getUserJobs = async (userId) => {
+  let allJobs = await getAll();
+  let userJobs = allJobs.filter((job) => job.ownerId === userId);
+
+  return userJobs;
+};
+
 export const getLastThree = async () => {
   let array = await getAll();
   let lastThree = array.slice(-3);

@@ -25,7 +25,7 @@ const Header = () => {
     <ul className="navbar-nav ms-auto">
       {" "}
       <li className="nav-item">
-        <Link className="nav-link" to="#">
+        <Link className="nav-link" to="/profile">
           Welcome, {user.email}
         </Link>
       </li>

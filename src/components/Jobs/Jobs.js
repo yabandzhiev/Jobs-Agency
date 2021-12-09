@@ -52,7 +52,7 @@ const Jobs = () => {
                         type="checkbox"
                         id="formCheck-1"
                       />
-                      <label className="form-check-label" for="formCheck-1">
+                      <label className="form-check-label" htmlFor="formCheck-1">
                         Phones
                       </label>
                     </div>
@@ -62,7 +62,7 @@ const Jobs = () => {
                         type="checkbox"
                         id="formCheck-2"
                       />
-                      <label className="form-check-label" for="formCheck-2">
+                      <label className="form-check-label" htmlFor="formCheck-2">
                         Laptops
                       </label>
                     </div>
@@ -72,7 +72,7 @@ const Jobs = () => {
                         type="checkbox"
                         id="formCheck-3"
                       />
-                      <label className="form-check-label" for="formCheck-3">
+                      <label className="form-check-label" htmlFor="formCheck-3">
                         PC
                       </label>
                     </div>
@@ -82,7 +82,7 @@ const Jobs = () => {
                         type="checkbox"
                         id="formCheck-4"
                       />
-                      <label className="form-check-label" for="formCheck-4">
+                      <label className="form-check-label" htmlFor="formCheck-4">
                         Tablets
                       </label>
                     </div>
@@ -95,7 +95,7 @@ const Jobs = () => {
                         type="checkbox"
                         id="formCheck-5"
                       />
-                      <label className="form-check-label" for="formCheck-5">
+                      <label className="form-check-label" htmlFor="formCheck-5">
                         Samsung
                       </label>
                     </div>
@@ -105,7 +105,7 @@ const Jobs = () => {
                         type="checkbox"
                         id="formCheck-6"
                       />
-                      <label className="form-check-label" for="formCheck-6">
+                      <label className="form-check-label" htmlFor="formCheck-6">
                         Apple
                       </label>
                     </div>
@@ -115,7 +115,7 @@ const Jobs = () => {
                         type="checkbox"
                         id="formCheck-7"
                       />
-                      <label className="form-check-label" for="formCheck-7">
+                      <label className="form-check-label" htmlFor="formCheck-7">
                         HTC
                       </label>
                     </div>
@@ -128,7 +128,7 @@ const Jobs = () => {
                         type="checkbox"
                         id="formCheck-8"
                       />
-                      <label className="form-check-label" for="formCheck-8">
+                      <label className="form-check-label" htmlFor="formCheck-8">
                         Android
                       </label>
                     </div>
@@ -138,7 +138,7 @@ const Jobs = () => {
                         type="checkbox"
                         id="formCheck-9"
                       />
-                      <label className="form-check-label" for="formCheck-9">
+                      <label className="form-check-label" htmlFor="formCheck-9">
                         iOS
                       </label>
                     </div>
@@ -166,7 +166,7 @@ const Jobs = () => {
                           type="checkbox"
                           id="formCheck-1"
                         />
-                        <label className="form-check-label" for="formCheck-1">
+                        <label className="form-check-label" htmlFor="formCheck-1">
                           Phones
                         </label>
                       </div>
@@ -176,7 +176,7 @@ const Jobs = () => {
                           type="checkbox"
                           id="formCheck-2"
                         />
-                        <label className="form-check-label" for="formCheck-2">
+                        <label className="form-check-label" htmlFor="formCheck-2">
                           Laptops
                         </label>
                       </div>
@@ -186,7 +186,7 @@ const Jobs = () => {
                           type="checkbox"
                           id="formCheck-3"
                         />
-                        <label className="form-check-label" for="formCheck-3">
+                        <label className="form-check-label" htmlFor="formCheck-3">
                           PC
                         </label>
                       </div>
@@ -196,7 +196,7 @@ const Jobs = () => {
                           type="checkbox"
                           id="formCheck-4"
                         />
-                        <label className="form-check-label" for="formCheck-4">
+                        <label className="form-check-label" htmlFor="formCheck-4">
                           Tablets
                         </label>
                       </div>
@@ -209,7 +209,7 @@ const Jobs = () => {
                           type="checkbox"
                           id="formCheck-5"
                         />
-                        <label className="form-check-label" for="formCheck-5">
+                        <label className="form-check-label" htmlFor="formCheck-5">
                           Samsung
                         </label>
                       </div>
@@ -219,7 +219,7 @@ const Jobs = () => {
                           type="checkbox"
                           id="formCheck-6"
                         />
-                        <label className="form-check-label" for="formCheck-6">
+                        <label className="form-check-label" htmlFor="formCheck-6">
                           Apple
                         </label>
                       </div>
@@ -229,7 +229,7 @@ const Jobs = () => {
                           type="checkbox"
                           id="formCheck-7"
                         />
-                        <label className="form-check-label" for="formCheck-7">
+                        <label className="form-check-label" htmlFor="formCheck-7">
                           HTC
                         </label>
                       </div>
@@ -242,7 +242,7 @@ const Jobs = () => {
                           type="checkbox"
                           id="formCheck-8"
                         />
-                        <label className="form-check-label" for="formCheck-8">
+                        <label className="form-check-label" htmlFor="formCheck-8">
                           Android
                         </label>
                       </div>
@@ -252,7 +252,7 @@ const Jobs = () => {
                           type="checkbox"
                           id="formCheck-9"
                         />
-                        <label className="form-check-label" for="formCheck-9">
+                        <label className="form-check-label" htmlFor="formCheck-9">
                           iOS
                         </label>
                       </div>
