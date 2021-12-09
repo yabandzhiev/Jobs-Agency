@@ -38,7 +38,7 @@ const Profile = () => {
             })
           ) : (
             <span>
-              <strong>No Jobs match your search criteria!</strong>
+              <strong>You haven't uploaded any jobs yet!</strong>
             </span>
           )}
         </div>
