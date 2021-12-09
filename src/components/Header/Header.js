@@ -72,11 +72,6 @@ const Header = () => {
               </NavLink>
             </li> */}
 
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/blogs">
-                Blog
-              </NavLink>
-            </li>
             {/* <li className="nav-item">
               <NavLink className="nav-link" to="">
                 Blog Post
