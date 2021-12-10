@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 
 import * as jobService from "../../services/jobService";
