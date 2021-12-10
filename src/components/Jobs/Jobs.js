@@ -6,7 +6,7 @@ import * as jobService from "../../services/jobService.js";
 
 const Jobs = () => {
   const [jobsInitial, setJobsInitial] = useState([]);
-
+  console.log(jobsInitial);
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
@@ -51,9 +51,10 @@ const Jobs = () => {
                         className="form-check-input"
                         type="checkbox"
                         id="formCheck-1"
+                        name="contract"
                       />
                       <label className="form-check-label" htmlFor="formCheck-1">
-                        Phones
+                        Contract
                       </label>
                     </div>
                     <div className="form-check">
@@ -61,9 +62,10 @@ const Jobs = () => {
                         className="form-check-input"
                         type="checkbox"
                         id="formCheck-2"
+                        name="fulltime"
                       />
                       <label className="form-check-label" htmlFor="formCheck-2">
-                        Laptops
+                        Fulltime
                       </label>
                     </div>
                     <div className="form-check">
@@ -71,19 +73,10 @@ const Jobs = () => {
                         className="form-check-input"
                         type="checkbox"
                         id="formCheck-3"
+                        name="internship"
                       />
                       <label className="form-check-label" htmlFor="formCheck-3">
-                        PC
-                      </label>
-                    </div>
-                    <div className="form-check">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        id="formCheck-4"
-                      />
-                      <label className="form-check-label" htmlFor="formCheck-4">
-                        Tablets
+                        Internship
                       </label>
                     </div>
                   </div>
@@ -146,6 +139,15 @@ const Jobs = () => {
                 </div>
               </div>
               <div className="d-md-none">
+                {" "}
+                <div style={{ textAlign: "center", marginTop: "20px" }}>
+                  {" "}
+                  <Link to="/jobs/create" className="job-details-button">
+                    <button className="btn btn-success " type="button">
+                      Create Job
+                    </button>
+                  </Link>
+                </div>
                 <a
                   className="btn btn-link d-md-none filter-collapse"
                   data-bs-toggle="collapse"

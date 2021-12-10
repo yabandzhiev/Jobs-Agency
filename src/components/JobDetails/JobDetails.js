@@ -72,7 +72,7 @@ const JobDetails = () => {
                       </p>
                     </div>
                     <div className="col">
-                      <p className="labels">{job.salary}</p>
+                      <p className="labels">${job.salary}</p>
                     </div>
                   </div>
                   <div className="row" style={{ marginTop: "10px" }}>
