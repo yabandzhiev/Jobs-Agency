@@ -15,6 +15,7 @@ import JobDetails from "./components/JobDetails/JobDetails.js";
 import EditJob from "./components/EditJob/EditJob.js";
 import Footer from "./components/Footer/Footer.js";
 import Logout from "./components/Logout/Logout.js";
+import RoutesGuard from "./components/common/RoutesGuard/RoutesGuard.js";
 
 import ScrollToTop from "./hoc/scrollToTop.js";
 
@@ -35,7 +36,7 @@ function App() {
     setUser(initialAuthState);
   };
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, isAuthenticated: user.email }}>
       <ScrollToTop />
 
       <Header />
@@ -45,13 +46,16 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/jobs" element={<Jobs />} />
-        <Route path="/jobs/create" element={<CreateJob />} />
         <Route path="/jobs/:jobId" element={<JobDetails />} />
-        <Route path="/jobs/:jobId/edit" element={<EditJob />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/logout" element={<Logout />} />
+
+        <Route element={<RoutesGuard />}>
+          <Route path="/jobs/create" element={<CreateJob />} />
+          <Route path="/jobs/:jobId/edit" element={<EditJob />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/logout" element={<Logout />} />
+        </Route>
       </Routes>
 
       <Footer />

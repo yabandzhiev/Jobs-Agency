@@ -18,9 +18,13 @@ const JobDetails = () => {
   const handleDestroy = (e) => {
     e.preventDefault();
 
-    jobService.destroy(jobId, user.accessToken).then(() => {
-      navigate("/jobs");
-    });
+    if (user.email) {
+      jobService.destroy(jobId, user.accessToken).then(() => {
+        navigate("/jobs");
+      });
+    } else {
+      navigate("/login");
+    }
   };
 
   return (
