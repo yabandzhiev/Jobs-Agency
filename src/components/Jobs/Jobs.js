@@ -1,13 +1,15 @@
 import JobItem from "./JobItem/JobItem.js";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import * as jobService from "../../services/jobService.js";
+import { AuthContext } from "../../contexts/AuthContext.js";
 
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Dropdown from "react-bootstrap/Dropdown";
 import Form from "react-bootstrap/Form";
 
 const Jobs = () => {
+  const { user } = useContext(AuthContext);
   const [jobsInitial, setJobsInitial] = useState([]);
   const [selectedFilter, setSelectedFilter] = useState("All");
 
@@ -97,11 +99,15 @@ const Jobs = () => {
             <div className="col-md-3">
               <div className="d-none d-md-block">
                 <div className="filters" style={{ textAlign: "center" }}>
-                  <Link to="/jobs/create" className="job-details-button">
-                    <button className="btn btn-success " type="button">
-                      Create Job
-                    </button>
-                  </Link>
+                  {user.email ? (
+                    <Link to="/jobs/create" className="job-details-button">
+                      <button className="btn btn-success " type="button">
+                        Create Job
+                      </button>
+                    </Link>
+                  ) : (
+                    ""
+                  )}
 
                   <div className="filter-item">
                     <br />
@@ -190,12 +196,15 @@ const Jobs = () => {
               <div className="d-md-none">
                 {" "}
                 <div style={{ textAlign: "center", marginTop: "20px" }}>
-                  {" "}
-                  <Link to="/jobs/create" className="job-details-button">
-                    <button className="btn btn-success " type="button">
-                      Create Job
-                    </button>
-                  </Link>
+                  {user.email ? (
+                    <Link to="/jobs/create" className="job-details-button">
+                      <button className="btn btn-success " type="button">
+                        Create Job
+                      </button>
+                    </Link>
+                  ) : (
+                    ""
+                  )}
                 </div>
                 <div style={{ textAlign: "center", marginTop: "20px" }}>
                   <Dropdown className="d-inline mx-2">
