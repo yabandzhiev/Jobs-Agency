@@ -77,9 +77,14 @@ const CreateJob = () => {
         },
         user.accessToken
       )
-      .then((res) => {
-        navigate("/jobs");
-      });
+      .then(
+        (res) => {
+          navigate("/jobs");
+        },
+        (error) => {
+          alert(error);
+        }
+      );
   };
   return (
     <section className="clean-block clean-form dark">
