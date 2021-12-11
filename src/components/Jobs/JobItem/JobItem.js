@@ -10,6 +10,7 @@ const JobItem = ({ job }) => {
             <img
               className="img-fluid d-block mx-auto job-catalog-images"
               src={job.image}
+              alt="company logo"
             />
           </Link>
         </div>
