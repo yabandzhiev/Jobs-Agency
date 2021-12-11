@@ -51,7 +51,7 @@ First install npm if you dont have it.
   ```sh
   npm install npm@latest -g
   ```
-  Check if you have nodejs installed. If you don't - (here's a link)[https://nodejs.org/en/download/]
+  Check if you have nodejs installed. If you don't - [here's a link](https://nodejs.org/en/download/)
 
 ### Installation
 
