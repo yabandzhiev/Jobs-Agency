@@ -23,6 +23,11 @@
 ## About The Project
 
 The project is about posting available jobs for companies your company.
+It has authentication and authorization system.
+Registered users can post jobs and check their posted jobs.
+They can also edit and delete the posts.
+The non-registered users can only see the jobs.
+
 
 
 
