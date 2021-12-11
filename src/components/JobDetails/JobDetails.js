@@ -27,6 +27,22 @@ const JobDetails = () => {
     }
   };
 
+  const ownerButtons = (
+    <div className="row">
+      <hr />
+      <div className="col">
+        <Button variant="danger" onClick={handleDestroy}>
+          Delete
+        </Button>
+      </div>
+      <div className="col">
+        <Link to={`/jobs/${jobId}/edit`}>
+          <Button variant="secondary">Edit</Button>
+        </Link>
+      </div>
+    </div>
+  );
+
   return (
     <div style={{ overflow: "hidden" }}>
       <section className="clean-block about-us">
@@ -143,19 +159,7 @@ const JobDetails = () => {
                     </div>
                   </div>
 
-                  <hr />
-                  <div className="row">
-                    <div className="col">
-                      <Button variant="danger" onClick={handleDestroy}>
-                        Delete
-                      </Button>
-                    </div>
-                    <div className="col">
-                      <Link to={`/jobs/${jobId}/edit`}>
-                        <Button variant="secondary">Edit</Button>
-                      </Link>
-                    </div>
-                  </div>
+                  {user._id && (user._id == job.ownerId ? ownerButtons : "")}
                 </div>
               </div>
             </div>
