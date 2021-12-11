@@ -1,13 +1,76 @@
 import JobItem from "./JobItem/JobItem.js";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
 import * as jobService from "../../services/jobService.js";
+
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import Dropdown from "react-bootstrap/Dropdown";
+import Form from "react-bootstrap/Form";
 
 const Jobs = () => {
   const [jobsInitial, setJobsInitial] = useState([]);
-  console.log(jobsInitial);
+  const [selectedFilter, setSelectedFilter] = useState("All");
+
   const [jobs, setJobs] = useState([]);
+
+  const handleOptionChange = (e) => {
+    switch (e.target.name) {
+      case "All":
+        setJobs(jobsInitial);
+        setSelectedFilter("All");
+
+        break;
+      case "Contract":
+        setJobs(jobsInitial.filter((x) => x.type === "Contract"));
+        setSelectedFilter("Contract");
+        break;
+      case "Fulltime":
+        setJobs(jobsInitial.filter((x) => x.type === "Fulltime"));
+        setSelectedFilter("Fulltime");
+
+        break;
+      case "Internship":
+        setJobs(jobsInitial.filter((x) => x.type === "Internship"));
+        setSelectedFilter("Internship");
+
+        break;
+
+      case "Business and Finance":
+        setJobs(jobsInitial.filter((x) => x.category === "Business and Finance"));
+        setSelectedFilter("Business and Finance");
+
+        break;
+      case "Health Science":
+        setJobs(jobsInitial.filter((x) => x.category === "Health Science"));
+        setSelectedFilter("Health Science");
+
+        break;
+      case "Information Technology":
+        setJobs(jobsInitial.filter((x) => x.category === "Information Technology"));
+        setSelectedFilter("Information Technology");
+
+        break;
+
+      case "Entry Level":
+        setJobs(jobsInitial.filter((x) => x.level === "Entry Level"));
+        setSelectedFilter("Entry Level");
+
+        break;
+      case "Intermediate Level":
+        setJobs(jobsInitial.filter((x) => x.level === "Intermediate Level"));
+        setSelectedFilter("Intermediate Level");
+
+        break;
+      case "Senior Level":
+        setJobs(jobsInitial.filter((x) => x.level === "Senior Level"));
+        setSelectedFilter("Senior Level");
+
+        break;
+
+      default:
+        break;
+    }
+  };
 
   useEffect(() => {
     jobService.getAll().then(
@@ -27,16 +90,13 @@ const Jobs = () => {
       <div className="container">
         <div className="block-heading">
           <h2 className="text-info">Job Listings</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna,
-            dignissim nec auctor in, mattis vitae leo.
-          </p>
+          <p>Here you can find all of the latest job listings available at the moment.</p>
         </div>
         <div className="content">
           <div className="row">
             <div className="col-md-3">
               <div className="d-none d-md-block">
-                <div className="filters">
+                <div className="filters" style={{ textAlign: "center" }}>
                   <Link to="/jobs/create" className="job-details-button">
                     <button className="btn btn-success " type="button">
                       Create Job
@@ -45,96 +105,85 @@ const Jobs = () => {
 
                   <div className="filter-item">
                     <br />
-                    <h3>Type</h3>
-                    <div className="form-check">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        id="formCheck-1"
-                        name="contract"
-                      />
-                      <label className="form-check-label" htmlFor="formCheck-1">
-                        Contract
-                      </label>
-                    </div>
-                    <div className="form-check">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        id="formCheck-2"
-                        name="fulltime"
-                      />
-                      <label className="form-check-label" htmlFor="formCheck-2">
-                        Fulltime
-                      </label>
-                    </div>
-                    <div className="form-check">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        id="formCheck-3"
-                        name="internship"
-                      />
-                      <label className="form-check-label" htmlFor="formCheck-3">
-                        Internship
-                      </label>
-                    </div>
-                  </div>
-                  <div className="filter-item">
-                    <h3>Salary</h3>
-                    <div className="form-check">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        id="formCheck-5"
-                      />
-                      <label className="form-check-label" htmlFor="formCheck-5">
-                        Samsung
-                      </label>
-                    </div>
-                    <div className="form-check">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        id="formCheck-6"
-                      />
-                      <label className="form-check-label" htmlFor="formCheck-6">
-                        Apple
-                      </label>
-                    </div>
-                    <div className="form-check">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        id="formCheck-7"
-                      />
-                      <label className="form-check-label" htmlFor="formCheck-7">
-                        HTC
-                      </label>
-                    </div>
-                  </div>
-                  <div className="filter-item">
-                    <h3>Level</h3>
-                    <div className="form-check">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        id="formCheck-8"
-                      />
-                      <label className="form-check-label" htmlFor="formCheck-8">
-                        Android
-                      </label>
-                    </div>
-                    <div className="form-check">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        id="formCheck-9"
-                      />
-                      <label className="form-check-label" htmlFor="formCheck-9">
-                        iOS
-                      </label>
-                    </div>
+
+                    <Dropdown className="d-inline mx-2">
+                      <Dropdown.Toggle id="dropdown-autoclose-true">
+                        Filters
+                      </Dropdown.Toggle>
+
+                      <Dropdown.Menu
+                        className="super-colors"
+                        style={{ textAlign: "center" }}
+                      >
+                        <Dropdown.Item onClick={handleOptionChange} name="All">
+                          All
+                        </Dropdown.Item>
+                        <Dropdown.Divider />
+                        <strong>Type</strong>
+                        <br />
+                        <Dropdown.Item onClick={handleOptionChange} name="Contract">
+                          Contract
+                        </Dropdown.Item>
+                        <br />
+                        <Dropdown.Item onClick={handleOptionChange} name="Fulltime">
+                          Fulltime
+                        </Dropdown.Item>
+                        <br />
+                        <Dropdown.Item onClick={handleOptionChange} name="Internship">
+                          Internship
+                        </Dropdown.Item>
+
+                        <Dropdown.Divider />
+
+                        <strong>Category</strong>
+                        <br />
+
+                        <Dropdown.Item
+                          onClick={handleOptionChange}
+                          name="Business and Finance"
+                        >
+                          Business and Finance
+                        </Dropdown.Item>
+                        <br />
+
+                        <Dropdown.Item onClick={handleOptionChange} name="Health Science">
+                          Health Science
+                        </Dropdown.Item>
+                        <br />
+
+                        <Dropdown.Item
+                          onClick={handleOptionChange}
+                          name="Information Technology"
+                        >
+                          Information Technology
+                        </Dropdown.Item>
+
+                        <Dropdown.Divider />
+                        <strong>Career levels</strong>
+                        <br />
+
+                        <Dropdown.Item onClick={handleOptionChange} name="Entry Level">
+                          Entry Level
+                        </Dropdown.Item>
+                        <br />
+
+                        <Dropdown.Item
+                          onClick={handleOptionChange}
+                          name="Intermediate Level"
+                        >
+                          Intermediate Level
+                        </Dropdown.Item>
+                        <br />
+
+                        <Dropdown.Item onClick={handleOptionChange} name="Senior Level">
+                          Senior Level
+                        </Dropdown.Item>
+                        <br />
+                      </Dropdown.Menu>
+                    </Dropdown>
+                    <br />
+                    <br />
+                    <p>{selectedFilter}</p>
                   </div>
                 </div>
               </div>
@@ -148,118 +197,82 @@ const Jobs = () => {
                     </button>
                   </Link>
                 </div>
-                <a
-                  className="btn btn-link d-md-none filter-collapse"
-                  data-bs-toggle="collapse"
-                  aria-expanded="false"
-                  aria-controls="filters"
-                  href="#filters"
-                  role="button"
-                >
-                  Filters<i className="icon-arrow-down filter-caret"></i>
-                </a>
-                <div className="collapse" id="filters">
-                  <div className="filters">
-                    <div className="filter-item">
-                      <h3>Type</h3>
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          id="formCheck-1"
-                        />
-                        <label className="form-check-label" htmlFor="formCheck-1">
-                          Phones
-                        </label>
-                      </div>
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          id="formCheck-2"
-                        />
-                        <label className="form-check-label" htmlFor="formCheck-2">
-                          Laptops
-                        </label>
-                      </div>
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          id="formCheck-3"
-                        />
-                        <label className="form-check-label" htmlFor="formCheck-3">
-                          PC
-                        </label>
-                      </div>
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          id="formCheck-4"
-                        />
-                        <label className="form-check-label" htmlFor="formCheck-4">
-                          Tablets
-                        </label>
-                      </div>
-                    </div>
-                    <div className="filter-item">
-                      <h3>Salary</h3>
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          id="formCheck-5"
-                        />
-                        <label className="form-check-label" htmlFor="formCheck-5">
-                          Samsung
-                        </label>
-                      </div>
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          id="formCheck-6"
-                        />
-                        <label className="form-check-label" htmlFor="formCheck-6">
-                          Apple
-                        </label>
-                      </div>
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          id="formCheck-7"
-                        />
-                        <label className="form-check-label" htmlFor="formCheck-7">
-                          HTC
-                        </label>
-                      </div>
-                    </div>
-                    <div className="filter-item">
-                      <h3>Level</h3>
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          id="formCheck-8"
-                        />
-                        <label className="form-check-label" htmlFor="formCheck-8">
-                          Android
-                        </label>
-                      </div>
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          id="formCheck-9"
-                        />
-                        <label className="form-check-label" htmlFor="formCheck-9">
-                          iOS
-                        </label>
-                      </div>
-                    </div>
-                  </div>
+                <div style={{ textAlign: "center", marginTop: "20px" }}>
+                  <Dropdown className="d-inline mx-2">
+                    <Dropdown.Toggle id="dropdown-autoclose-true">
+                      Filters
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu
+                      className="super-colors"
+                      style={{ textAlign: "center" }}
+                    >
+                      <Dropdown.Item onClick={handleOptionChange} name="All">
+                        All
+                      </Dropdown.Item>
+                      <Dropdown.Divider />
+                      <strong>Type</strong>
+                      <br />
+                      <Dropdown.Item onClick={handleOptionChange} name="Contract">
+                        Contract
+                      </Dropdown.Item>
+                      <br />
+                      <Dropdown.Item onClick={handleOptionChange} name="Fulltime">
+                        Fulltime
+                      </Dropdown.Item>
+                      <br />
+                      <Dropdown.Item onClick={handleOptionChange} name="Internship">
+                        Internship
+                      </Dropdown.Item>
+
+                      <Dropdown.Divider />
+
+                      <strong>Category</strong>
+                      <br />
+
+                      <Dropdown.Item
+                        onClick={handleOptionChange}
+                        name="Business and Finance"
+                      >
+                        Business and Finance
+                      </Dropdown.Item>
+                      <br />
+
+                      <Dropdown.Item onClick={handleOptionChange} name="Health Science">
+                        Health Science
+                      </Dropdown.Item>
+                      <br />
+
+                      <Dropdown.Item
+                        onClick={handleOptionChange}
+                        name="Information Technology"
+                      >
+                        Information Technology
+                      </Dropdown.Item>
+
+                      <Dropdown.Divider />
+                      <strong>Career levels</strong>
+                      <br />
+
+                      <Dropdown.Item onClick={handleOptionChange} name="Entry Level">
+                        Entry Level
+                      </Dropdown.Item>
+                      <br />
+
+                      <Dropdown.Item
+                        onClick={handleOptionChange}
+                        name="Intermediate Level"
+                      >
+                        Intermediate Level
+                      </Dropdown.Item>
+                      <br />
+
+                      <Dropdown.Item onClick={handleOptionChange} name="Senior Level">
+                        Senior Level
+                      </Dropdown.Item>
+                      <br />
+                    </Dropdown.Menu>
+                  </Dropdown>
                 </div>
               </div>
             </div>
@@ -272,9 +285,9 @@ const Jobs = () => {
                       return <JobItem job={x} key={x._id} />;
                     })
                   ) : (
-                    <span>
-                      <strong>No Jobs match your search criteria!</strong>
-                    </span>
+                    <h4 style={{ textAlign: "center" }}>
+                      <strong>No Jobs are available!</strong>
+                    </h4>
                   )}
                 </div>
               </div>
