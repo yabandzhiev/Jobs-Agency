@@ -1,7 +1,7 @@
 {
   "s23d2g3f45g-2d23f43fd22-d2f2d22d2": {
     "_id": "s23d2g3f45g-2d23f43fd22-d2f2d22d2",
-    "image": "assets/img/companies/health-company.png",
+    "image": "https://images.squarespace-cdn.com/content/v1/598dfb06cd0f684d50f9d08d/1575955254176-ZJC8YYA7QOPOBL2O5XC0/HoyHealth+stacked+created.png",
     "date": "15-06-2020",
     "location": "London",
     "type": "Contract",
@@ -15,7 +15,7 @@
   },
   "fjk2d23kj2nkd2-d23d23f2d32-f2d223f2d-22d2": {
     "_id": "fjk2d23kj2nkd2-d23d23f2d32-f2d223f2d-22d2",
-    "image": "assets/img/companies/school-company.png",
+    "image": "https://d3bh3xcwife49w.cloudfront.net/e0f2832ameeb2e70atcb59d4e7s9483a4ae/City_of_London_School.png",
     "date": "15-06-2020",
     "location": "London",
     "type": "Fulltime",
@@ -29,7 +29,7 @@
   },
   "wk2jd2n3kdj2dk-f2d23f23d-23f2d323f23d2-d2": {
     "_id": "wk2jd2n3kdj2dk-f2d23f23d-23f2d323f23d2-d2",
-    "image": "assets/img/companies/software-company.png",
+    "image": "https://www.murex.com/sites/default/files/Pivotal-OnLight.png",
     "date": "15-06-2020",
     "location": "London",
     "type": "Internship",
