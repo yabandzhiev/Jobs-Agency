@@ -16,6 +16,8 @@ const EditJob = () => {
     });
   }, []);
 
+  const isOwner = initialData.ownerId == user._id;
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -91,11 +93,11 @@ const EditJob = () => {
         navigate(-1);
       });
   };
-  return (
+  return isOwner ? (
     <section className="clean-block clean-form dark">
       <div className="container">
         <div className="block-heading">
-          <h2 className="text-info">Create Job</h2>
+          <h2 className="text-info">Edit Job</h2>
         </div>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -118,7 +120,7 @@ const EditJob = () => {
               <Form.Select
                 aria-label="Default select example"
                 name="type"
-                value={initialData.type}
+                defaultValue={initialData.type}
               >
                 <option disabled>Choose a type</option>
                 <option value="Contract">Contract</option>
@@ -159,7 +161,7 @@ const EditJob = () => {
               <Form.Select
                 aria-label="Default select example"
                 name="category"
-                value={initialData.category}
+                defaultValue={initialData.category}
               >
                 <option disabled>Choose a category</option>
                 <option value="Health Science">Health Science</option>
@@ -197,7 +199,7 @@ const EditJob = () => {
               <Form.Select
                 aria-label="Default select example"
                 name="level"
-                value={initialData.level}
+                defaultValue={initialData.level}
               >
                 <option disabled>Choose level</option>
                 <option value="Entry Level">Entry Level</option>
@@ -247,6 +249,14 @@ const EditJob = () => {
             </button>
           </div>
         </form>
+      </div>
+    </section>
+  ) : (
+    <section className="clean-block clean-form dark">
+      <div className="container">
+        <div className="block-heading">
+          <h2 className="text-info">You are not the owner of this Job</h2>
+        </div>
       </div>
     </section>
   );
