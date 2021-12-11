@@ -11,9 +11,7 @@ const FeaturedJobs = () => {
       (res) => {
         setJob(res);
       },
-      (err) => {
-        alert(err.message);
-      }
+      (err) => {}
     );
   }, []);
 
@@ -26,9 +24,13 @@ const FeaturedJobs = () => {
       </div>
       <div className="container featured-jobs-group">
         <div className="row">
-          {job.map((x) => {
-            return <FeaturedJobsItem job={x} key={x._id} />;
-          })}
+          {job.length > 0 ? (
+            job.map((x) => {
+              return <FeaturedJobsItem job={x} key={x._id} />;
+            })
+          ) : (
+            <h4>No Jobs are available at the moment!</h4>
+          )}
         </div>
       </div>
     </section>
