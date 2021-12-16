@@ -16,8 +16,8 @@ const FeaturedJobs = () => {
   }, []);
 
   return (
-    <section>
-      <div className="text-info text-center">
+    <section className="clean-block clean-info dark">
+      <div className="text-info text-center block-heading">
         <h2>Latest Jobs</h2>
         <p>Those are the last three jobs published right now!</p>
         <br />

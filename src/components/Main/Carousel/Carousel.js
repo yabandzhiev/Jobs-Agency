@@ -4,7 +4,9 @@ const Carousel = () => {
   return (
     <section className="clean-block slider dark">
       <div className="container">
-        <div className="block-heading"></div>
+        <div className="block-heading carousel-heading">
+          <h1>Welcome to Jobs Agency</h1>
+        </div>
         <div className="carousel slide" data-bs-ride="carousel" id="carousel-1">
           <div className="carousel-inner">
             <div className="carousel-item active">
