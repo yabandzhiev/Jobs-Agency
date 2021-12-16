@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 
 import { AuthContext } from "../../contexts/AuthContext.js";
+import "./Header.css";
 
 const Header = () => {
   const { user } = useContext(AuthContext);
@@ -66,17 +67,6 @@ const Header = () => {
                 Jobs
               </NavLink>
             </li>
-            {/* <li className="nav-item">
-              <NavLink className="nav-link" to="service-page.html">
-                Services
-              </NavLink>
-            </li> */}
-
-            {/* <li className="nav-item">
-              <NavLink className="nav-link" to="">
-                Blog Post
-              </NavLink>
-            </li> */}
             <li className="nav-item">
               <NavLink className="nav-link" to="/about">
                 About Us
