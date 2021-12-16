@@ -35,7 +35,6 @@ The non-registered users can only see the jobs.
 
 
 
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
