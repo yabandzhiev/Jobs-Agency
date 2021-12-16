@@ -4,12 +4,12 @@ const Carousel = () => {
   return (
     <section className="clean-block slider dark">
       <div className="container">
-        <div className="block-heading carousel-heading">
-          <h1>Welcome to Jobs Agency</h1>
-        </div>
         <div className="carousel slide" data-bs-ride="carousel" id="carousel-1">
           <div className="carousel-inner">
             <div className="carousel-item active">
+              <div className="block-heading carousel-heading">
+                <h1>Find your dream job, right here.</h1>
+              </div>
               <img
                 className="w-100 d-block"
                 src="assets/img/carousel/slider-image-1.jpg"
@@ -17,6 +17,9 @@ const Carousel = () => {
               />
             </div>
             <div className="carousel-item">
+              <div className="block-heading carousel-heading">
+                <h1>Your new job starts right here.</h1>
+              </div>
               <img
                 className="w-100 d-block"
                 src="assets/img/carousel/slider-image-2.jpg"
@@ -24,6 +27,9 @@ const Carousel = () => {
               />
             </div>
             <div className="carousel-item">
+              <div className="block-heading carousel-heading">
+                <h1>Choose from tons of jobs.</h1>
+              </div>
               <img
                 className="w-100 d-block"
                 src="assets/img/carousel/slider-image-3.webp"
