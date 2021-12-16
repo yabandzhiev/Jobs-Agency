@@ -19,7 +19,9 @@ const FeaturedJobs = () => {
     <section className="clean-block clean-info dark">
       <div className="text-info text-center block-heading">
         <h2>Latest Jobs</h2>
-        <p>Those are the last three jobs published right now!</p>
+        <p style={{ color: "black" }}>
+          Those are the last three jobs published right now!
+        </p>
         <br />
       </div>
       <div className="container featured-jobs-group">

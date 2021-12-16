@@ -12,8 +12,8 @@ const ContactUs = () => {
         <div className="block-heading">
           <h2 className="text-info">Contact Us</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna,
-            dignissim nec auctor in, mattis vitae leo.
+            Feel free to contact us about anything that you have in mind. We will make
+            sure to respond as soon as we can.
           </p>
         </div>
         <form onSubmit={handleSubmit}>

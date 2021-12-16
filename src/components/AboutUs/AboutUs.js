@@ -5,8 +5,7 @@ const AboutUs = () => {
         <div className="block-heading">
           <h2 className="text-info">About Us</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna,
-            dignissim nec auctor in, mattis vitae leo.
+            Meet the team who managed to build and keep on maintaining the site for you!
           </p>
         </div>
         <div className="row justify-content-center">
@@ -18,9 +17,7 @@ const AboutUs = () => {
               />
               <div className="card-body info">
                 <h4 className="card-title">John Smith</h4>
-                <p className="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </p>
+                <p className="card-text">Front-End Developer</p>
                 <div className="icons">
                   <a href="#">
                     <i className="icon-social-facebook"></i>
@@ -43,9 +40,7 @@ const AboutUs = () => {
               />
               <div className="card-body info">
                 <h4 className="card-title">Robert Downturn</h4>
-                <p className="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </p>
+                <p className="card-text">Back-End Developer</p>
                 <div className="icons">
                   <a href="#">
                     <i className="icon-social-facebook"></i>
@@ -68,9 +63,7 @@ const AboutUs = () => {
               />
               <div className="card-body info">
                 <h4 className="card-title">Ally Sanders</h4>
-                <p className="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </p>
+                <p className="card-text">Team Lead</p>
                 <div className="icons">
                   <a href="#">
                     <i className="icon-social-facebook"></i>

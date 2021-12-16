@@ -9,8 +9,9 @@ const AboutUsIndex = () => {
         <div className="block-heading">
           <h2 className="text-info">About Us</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna,
-            dignissim nec auctor in, mattis vitae leo.
+            If you’re looking for a job, we can help you get in the door at some
+            incredible companies. No matter where you are, we can help you get where you
+            want to go in your career.
           </p>
         </div>
         <div className="row align-items-center">
@@ -22,12 +23,11 @@ const AboutUsIndex = () => {
             />
           </div>
           <div className="col-md-6">
-            <h3>Lorem impsum dolor sit amet</h3>
+            <h3>The place where recruiters and candidates meet.</h3>
             <div className="getting-started-info">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit.
+                We are the agency whose job is to find you the most suitable Job! Take a
+                look at some of them.
               </p>
             </div>
             <button
