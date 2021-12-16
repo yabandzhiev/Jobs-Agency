@@ -3,9 +3,9 @@ const baseUrl = "http://localhost:3030/jsonstore/job";
 export const getAll = async () => {
   let response = await fetch(baseUrl);
 
-  let blogs = await response.json();
+  let jobs = await response.json();
 
-  let result = Object.values(blogs);
+  let result = Object.values(jobs);
 
   return result;
 };
@@ -33,7 +33,7 @@ export const create = async (jobData, token) => {
       "content-type": "application/json",
       "x-authorization": token,
     },
-    body: JSON.stringify({ ...jobData }),
+    body: JSON.stringify({ ...jobData, applies: [] }),
   });
 
   let result = await response.json();

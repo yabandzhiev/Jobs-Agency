@@ -48,6 +48,7 @@ const Header = () => {
           data-bs-toggle="collapse"
           className="navbar-toggler"
           data-bs-target="#navcol-1"
+          aria-expanded="false"
         >
           <span className="visually-hidden">Toggle navigation</span>
           <span className="navbar-toggler-icon"></span>

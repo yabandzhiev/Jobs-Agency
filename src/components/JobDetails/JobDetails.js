@@ -1,7 +1,8 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 
 import * as jobService from "../../services/jobService";
+import * as applyService from "../../services/applyService";
 import { AuthContext } from "../../contexts/AuthContext.js";
 import useJobState from "../../hooks/useJobState";
 
@@ -14,6 +15,32 @@ const JobDetails = () => {
   let { user } = useContext(AuthContext);
   const { jobId } = useParams();
   const [job, setJob] = useJobState(jobId);
+
+  useEffect(() => {
+    applyService.getApplicants(jobId).then((applies) => {
+      setJob((state) => ({ ...state, applies }));
+    });
+  }, []);
+
+  const applyButtonClick = () => {
+    if (user._id === job._ownerId) {
+      return;
+    }
+
+    if (job.applies.includes(user._id)) {
+      alert("You cannot apply again");
+      return;
+    }
+
+    applyService.apply(user._id, jobId, user.accessToken).then(() => {
+      setJob((state) => ({ ...state, applies: [...state.applies, user._id] }));
+    });
+  };
+  const userButtons = (
+    <Button onClick={applyButtonClick} disabled={job.applies?.includes(user._id)}>
+      Apply
+    </Button>
+  );
 
   const handleDestroy = (e) => {
     e.preventDefault();
@@ -159,7 +186,9 @@ const JobDetails = () => {
                     </div>
                   </div>
 
-                  {user._id && (user._id == job.ownerId ? ownerButtons : "")}
+                  <span>Applicants: {job.applies?.length || 0}</span>
+                  <br />
+                  {user._id && (user._id == job.ownerId ? ownerButtons : userButtons)}
                 </div>
               </div>
             </div>
