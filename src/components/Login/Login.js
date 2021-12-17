@@ -1,12 +1,16 @@
 import { useContext, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, Navigate } from "react-router-dom";
 
 import * as authService from "../../services/authService.js";
 import { AuthContext } from "../../contexts/AuthContext.js";
 
-const Login = (e) => {
-  const { login } = useContext(AuthContext);
+const Login = () => {
+  const { isAuthenticated, login } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  if (isAuthenticated) {
+    return <Navigate to="/" />;
+  }
 
   const onLogin = (e) => {
     e.preventDefault();

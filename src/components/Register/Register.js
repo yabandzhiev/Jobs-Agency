@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import { AuthContext } from "../../contexts/AuthContext.js";
@@ -7,8 +7,12 @@ import * as authService from "../../services/authService.js";
 import "./Register.css";
 
 const Register = () => {
-  const { login } = useContext(AuthContext);
+  const { isAuthenticated, login } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  if (isAuthenticated) {
+    return <Navigate to="/" />;
+  }
 
   const onRegister = (e) => {
     e.preventDefault();
