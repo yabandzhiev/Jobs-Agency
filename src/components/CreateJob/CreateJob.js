@@ -160,7 +160,7 @@ const CreateJob = () => {
           </div>
           <div className="mb-3">
             <label className="form-label" htmlFor="date">
-              Date
+              Until Date
             </label>
             <input type="date" className="form-control" id="date" name="date" />
           </div>
