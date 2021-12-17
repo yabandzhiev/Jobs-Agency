@@ -7,7 +7,6 @@ import "./Profile.css";
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
-  const [userJob, setUserJob] = useState([]);
 
   const [jobs, setJobs] = useState([]);
 
@@ -15,18 +14,21 @@ const Profile = () => {
     jobService.getUserJobs(user._id).then(
       (res) => {
         setJobs(res);
-        setUserJob(res);
       },
       (err) => {
         alert(err.message);
       }
     );
-  }, []);
+  }, [user._id]);
 
   return (
     <div className="profile-card">
       <div className="profile-back"></div>
-      <img className="img-circle profile-pic" src="assets/img/profile/avatar.png" />
+      <img
+        className="img-circle profile-pic"
+        src="assets/img/profile/avatar.png"
+        alt="avatar"
+      />
       <h3 className="profile-name">{user.email}</h3>
       <h2>My Job Listings</h2>
       <div className="products">

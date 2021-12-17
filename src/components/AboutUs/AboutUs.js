@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const AboutUs = () => {
   return (
     <section className="clean-block about-us">
@@ -14,20 +16,22 @@ const AboutUs = () => {
               <img
                 className="card-img-top w-100 d-block"
                 src="assets/img/avatars/avatar1.jpg"
+                alt="avatar1"
               />
               <div className="card-body info">
                 <h4 className="card-title">John Smith</h4>
                 <p className="card-text">Front-End Developer</p>
                 <div className="icons">
-                  <a href="#">
+                  <Link to="#">
                     <i className="icon-social-facebook"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link to="#">
                     <i className="icon-social-instagram"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+
+                  <Link to="#">
                     <i className="icon-social-twitter"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -37,20 +41,22 @@ const AboutUs = () => {
               <img
                 className="card-img-top w-100 d-block"
                 src="assets/img/avatars/avatar2.jpg"
+                alt="avatar2"
               />
               <div className="card-body info">
                 <h4 className="card-title">Robert Downturn</h4>
                 <p className="card-text">Back-End Developer</p>
                 <div className="icons">
-                  <a href="#">
+                  <Link to="#">
                     <i className="icon-social-facebook"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link to="#">
                     <i className="icon-social-instagram"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+
+                  <Link to="#">
                     <i className="icon-social-twitter"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -60,20 +66,22 @@ const AboutUs = () => {
               <img
                 className="card-img-top w-100 d-block"
                 src="assets/img/avatars/avatar3.jpg"
+                alt="avatar3"
               />
               <div className="card-body info">
                 <h4 className="card-title">Ally Sanders</h4>
                 <p className="card-text">Team Lead</p>
                 <div className="icons">
-                  <a href="#">
+                  <Link to="#">
                     <i className="icon-social-facebook"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+                  <Link to="#">
                     <i className="icon-social-instagram"></i>
-                  </a>
-                  <a href="#">
+                  </Link>
+
+                  <Link to="#">
                     <i className="icon-social-twitter"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

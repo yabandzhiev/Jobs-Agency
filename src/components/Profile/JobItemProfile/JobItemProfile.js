@@ -9,6 +9,7 @@ const JobItemProfile = ({ job }) => {
             <img
               className="img-fluid d-block mx-auto job-catalog-images"
               src={job.image}
+              alt="job card"
             />
           </Link>
         </div>
@@ -18,9 +19,9 @@ const JobItemProfile = ({ job }) => {
           <h4 className="card-title">
             <strong>{job.headline}</strong>
           </h4>
-          <span title="Published on">
+          <span title="Until Date">
             <p>
-              Published on{" "}
+              Until Date{" "}
               <strong>
                 <i>{job.date}</i>
               </strong>

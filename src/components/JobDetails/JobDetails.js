@@ -20,7 +20,7 @@ const JobDetails = () => {
     applyService.getApplicants(jobId).then((applies) => {
       setJob((state) => ({ ...state, applies }));
     });
-  }, []);
+  }, [jobId, setJob]);
 
   const applyButtonClick = () => {
     if (user._id === job._ownerId) {
@@ -146,7 +146,7 @@ const JobDetails = () => {
                   <div className="row" style={{ marginTop: "10px" }}>
                     <div className="col">
                       <p className="labels">
-                        <strong>Date</strong>
+                        <strong>Until Date</strong>
                         <br />
                       </p>
                     </div>
@@ -188,7 +188,7 @@ const JobDetails = () => {
 
                   <span>Applicants: {job.applies?.length || 0}</span>
                   <br />
-                  {user._id && (user._id == job.ownerId ? ownerButtons : userButtons)}
+                  {user._id && (user._id === job.ownerId ? ownerButtons : userButtons)}
                 </div>
               </div>
             </div>

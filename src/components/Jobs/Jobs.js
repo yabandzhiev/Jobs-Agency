@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 import * as jobService from "../../services/jobService.js";
 import { AuthContext } from "../../contexts/AuthContext.js";
 
-import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Dropdown from "react-bootstrap/Dropdown";
-import Form from "react-bootstrap/Form";
 
 const Jobs = () => {
   const { user } = useContext(AuthContext);

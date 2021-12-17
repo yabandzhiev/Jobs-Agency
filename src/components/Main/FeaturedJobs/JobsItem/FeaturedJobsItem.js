@@ -15,9 +15,9 @@ const FeaturedJobsItem = ({ job }) => {
           <h4 className="card-title">
             <strong>{job.headline}</strong>
           </h4>
-          <span title="Published on">
+          <span title="Until Date">
             <p>
-              Published on{" "}
+              Until Date{" "}
               <strong>
                 <i>{job.date}</i>
               </strong>

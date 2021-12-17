@@ -7,7 +7,10 @@ const ErrorPage = () => {
       <div className="wave-7"></div>
       <div className="wave-6"></div>
       <Link to="/" className="wave-island">
-        <img src="http://res.cloudinary.com/andrewhani/image/upload/v1524501929/404/island.svg" />
+        <img
+          src="http://res.cloudinary.com/andrewhani/image/upload/v1524501929/404/island.svg"
+          alt="island"
+        />
       </Link>
       <div className="wave-5"></div>
       <div className="wave-lost wrp">
@@ -20,6 +23,7 @@ const ErrorPage = () => {
         <img
           className="boat"
           src="http://res.cloudinary.com/andrewhani/image/upload/v1524501894/404/boat.svg"
+          alt="boat"
         />
       </div>
       <div className="wawe-3"></div>

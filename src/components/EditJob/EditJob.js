@@ -14,9 +14,9 @@ const EditJob = () => {
     jobService.getOne(jobId).then((res) => {
       setInitialData(res);
     });
-  }, []);
+  }, [jobId]);
 
-  const isOwner = initialData.ownerId == user._id;
+  const isOwner = initialData.ownerId === user._id;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,7 +38,7 @@ const EditJob = () => {
     if (
       headline.length === "" ||
       location.length === "" ||
-      salary.length == "" ||
+      salary.length === "" ||
       company.length === "" ||
       date.length === "" ||
       image.length === "" ||
@@ -49,7 +49,7 @@ const EditJob = () => {
     }
 
     let regex = /^https?:\/\/.+/i;
-    let emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    let emailRegex = /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/;
 
     if (headline.length < 3) {
       return alert("Headline must be at least 3 characters.");

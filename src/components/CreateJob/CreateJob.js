@@ -28,7 +28,7 @@ const CreateJob = () => {
     if (
       headline.length === "" ||
       location.length === "" ||
-      salary.length == "" ||
+      salary.length === "" ||
       company.length === "" ||
       date.length === "" ||
       image.length === "" ||
@@ -39,7 +39,7 @@ const CreateJob = () => {
     }
 
     let regex = /^https?:\/\/.+/i;
-    let emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    let emailRegex = /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/;
 
     if (headline.length < 3) {
       return alert("Headline must be at least 3 characters.");
