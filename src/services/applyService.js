@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3030/data/applies";
+const baseUrl = "https://jobs-agency.herokuapp.com/data/applies";
 
 export const apply = async (userId, jobId, token) => {
   let result = await fetch(baseUrl, {

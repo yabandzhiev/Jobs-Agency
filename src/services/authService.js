@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3030";
+const baseUrl = "https://jobs-agency.herokuapp.com";
 
 export const login = async (email, password) => {
   let response = await fetch(`${baseUrl}/users/login`, {

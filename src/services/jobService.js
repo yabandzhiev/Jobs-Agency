@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3030/jsonstore/job";
+const baseUrl = "https://jobs-agency.herokuapp.com/jsonstore/job";
 
 export const getAll = async () => {
   let response = await fetch(baseUrl);
