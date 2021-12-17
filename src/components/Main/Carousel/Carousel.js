@@ -8,7 +8,7 @@ const Carousel = () => {
           <div className="carousel-inner">
             <div className="carousel-item active">
               <div className="block-heading carousel-heading">
-                <h1>Find your dream job, right here.</h1>
+                <h1>Find your dream job, right here</h1>
               </div>
               <img
                 className="w-100 d-block"
@@ -18,21 +18,21 @@ const Carousel = () => {
             </div>
             <div className="carousel-item">
               <div className="block-heading carousel-heading">
-                <h1>Your new job starts right here.</h1>
+                <h1>Choose one of the best companies</h1>
               </div>
               <img
                 className="w-100 d-block"
-                src="assets/img/carousel/slider-image-2.jpg"
+                src="assets/img/carousel/slider-image-3.webp"
                 alt="Slide"
               />
             </div>
             <div className="carousel-item">
               <div className="block-heading carousel-heading">
-                <h1>Choose from tons of jobs.</h1>
+                <h1>Your new job starts right here</h1>
               </div>
               <img
                 className="w-100 d-block"
-                src="assets/img/carousel/slider-image-3.webp"
+                src="assets/img/carousel/slider-image-2.jpg"
                 alt="Slide"
               />
             </div>

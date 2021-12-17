@@ -15,6 +15,7 @@ import JobDetails from "./components/JobDetails/JobDetails.js";
 import EditJob from "./components/EditJob/EditJob.js";
 import Footer from "./components/Footer/Footer.js";
 import Logout from "./components/Logout/Logout.js";
+import ErrorPage from "./components/ErrorPage/ErrorPage.js";
 import RoutesGuard from "./components/common/RoutesGuard/RoutesGuard.js";
 
 import ScrollToTop from "./hoc/scrollToTop.js";
@@ -56,6 +57,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/logout" element={<Logout />} />
         </Route>
+        <Route path="/*" element={<ErrorPage />} />
       </Routes>
 
       <Footer />
