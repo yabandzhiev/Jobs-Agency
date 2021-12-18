@@ -30,7 +30,7 @@ const ErrorPage = () => {
       <div className="wawe-2"></div>
       <div className="wawe-1"></div>
       <div className="wave-message">
-        <p>Your're lost</p>
+        <p>You're lost</p>
         <p>Click on the island to return</p>
       </div>
       <div></div>
