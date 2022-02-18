@@ -63,7 +63,7 @@ First install npm if you dont have it.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/yabandzhiev/react-exam.git
+   git clone https://github.com/yabandzhiev/Jobs-Agency.git
    ```
 2. Install NPM packages
    ```sh
