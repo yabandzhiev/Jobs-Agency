@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext.js";
 import * as jobService from "../../services/jobService.js";
+import { formsValidate } from "../../formsValidate/formsValidate.js";
 
 const EditJob = () => {
   const { user } = useContext(AuthContext);
@@ -19,79 +20,22 @@ const EditJob = () => {
   const isOwner = initialData.ownerId === user._id;
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-
-    let formData = new FormData(e.currentTarget);
-
-    let headline = formData.get("headline");
-    let type = formData.get("type");
-    let location = formData.get("location");
-    let salary = formData.get("salary");
-    let category = formData.get("category");
-    let company = formData.get("company");
-    let date = formData.get("date");
-    let level = formData.get("level");
-    let description = formData.get("description");
-    let contact = formData.get("contact");
-    let image = formData.get("image");
-
-    if (
-      headline.length === "" ||
-      location.length === "" ||
-      salary.length === "" ||
-      company.length === "" ||
-      date.length === "" ||
-      image.length === "" ||
-      contact.length === "" ||
-      description.length === ""
-    ) {
-      return alert("Fill in all the fields!");
+    let obj = formsValidate(e);
+    if (obj !== undefined) {
+      jobService
+        .edit(
+          {
+            _id: jobId,
+            ...obj,
+            ownerId: user._id,
+          },
+          jobId,
+          user.accessToken
+        )
+        .then((res) => {
+          navigate(-1);
+        });
     }
-
-    let regex = /^https?:\/\/.+/i;
-    let emailRegex = /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/;
-
-    if (headline.length < 3) {
-      return alert("Headline must be at least 3 characters.");
-    } else if (location.length < 3) {
-      return alert("Location must be at least 3 characters.");
-    } else if (salary < 0) {
-      return alert("Salary must be a positive number.");
-    } else if (company.length < 3) {
-      return alert("Location must be at least 3 characters.");
-    } else if (!image.match(regex)) {
-    } else if (description.length < 20) {
-      return alert("Description must be at least 20 characters.");
-    } else if (!image.match(regex)) {
-    } else if (!contact.match(emailRegex)) {
-      return alert("Please enter valid email address.");
-    } else if (!image.match(regex)) {
-      return alert("Image URL is invalid.");
-    }
-
-    jobService
-      .edit(
-        {
-          _id: jobId,
-          headline,
-          type,
-          location,
-          salary,
-          category,
-          company,
-          date,
-          level,
-          image,
-          contact,
-          description,
-          ownerId: user._id,
-        },
-        jobId,
-        user.accessToken
-      )
-      .then((res) => {
-        navigate(-1);
-      });
   };
   return isOwner ? (
     <section className="clean-block clean-form dark">
@@ -185,7 +129,7 @@ const EditJob = () => {
             <label className="form-label" htmlFor="date">
               Date
             </label>
-            <input
+            <Form.Control
               type="date"
               className="form-control"
               id="date"
