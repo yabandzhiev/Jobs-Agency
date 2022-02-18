@@ -18,7 +18,7 @@ import Logout from "./components/Logout/Logout.js";
 import ErrorPage from "./components/ErrorPage/ErrorPage.js";
 import RoutesGuard from "./components/common/RoutesGuard/RoutesGuard.js";
 
-import ScrollToTop from "./hoc/scrollToTop.js";
+import ScrollToTop from "./scrollToTop/scrollToTop.js";
 
 const initialAuthState = {
   _id: "",
